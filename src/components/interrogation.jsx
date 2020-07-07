@@ -15,40 +15,46 @@ const Interrogation = ({
     } 
  
     return (
-        <form onSubmit={(event) => {
-                event.preventDefault();
-                setAnswer(selected === correct_answers[0]);
-                if(count < questions.length) {
-                    nextQuestion(questions[count].question, questions[count].answers, questions[count].correct_answers)
-                } else {
-                    nextQuestion(null, null, null)
-                }
-            setSelected(null);
-            }}>
-            <div>
-                Запитання №{count}
-            </div>
-            <div>
-                {question}
-            </div>
-            <div>
-                {answers.map((item, index) => {
-                        return (<div key={index}>
-                                    <input value={item} type='radio' id={index} name="answer" onChange={(event) => setSelected(event.target.value)}/>
-                                    <label htmlFor={index}>{item}</label>
-                                </div>)
-                        })  
-                }
-            </div>
-            <div>
+        <div className='container'>
+            <h1>
+                Наскільки ти кіберспортивний експерт
+            </h1>
+            <form onSubmit={(event) => {
+                    event.preventDefault();
+                    setAnswer(selected === correct_answers[0]);
+                    if(count < questions.length) {
+                        nextQuestion(questions[count].question, questions[count].answers, questions[count].correct_answers)
+                    } else {
+                        nextQuestion(null, null, null)
+                    }
+                    setSelected(null);
+                    }}
+                    className='form'>
                 <div>
-                    {count}/{totalCount}
+                    Запитання №{count}
                 </div>
-                <button>
-                    Продовжити
-                </button>
-            </div>
-        </form>
+                <div className='question'>
+                    {question}
+                </div>
+                <div className='radio'>
+                    {answers.map((item, index) => {
+                            return (<div key={index}>
+                                        <input value={item} type='radio' id={index} name="answer" onChange={(event) => setSelected(event.target.value)}/>
+                                        <label htmlFor={index}>{item}</label>
+                                    </div>)
+                            })  
+                    }
+                </div>
+                <div className='footer'>
+                    <span className='count'>
+                        {count}/{totalCount}
+                    </span>
+                    <button className='button'>
+                        Продовжити
+                    </button>
+                </div>
+            </form>
+        </div>
     );
 }
 

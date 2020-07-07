@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+}
+
+.container {
+    padding: 0 20vw;
+}
+
+.form {
+    font-weight: 700;
+}
+
+.question {
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.radio {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.count {
+    margin-right: 20px;
+    line-height: 2;
+}
+
+.button {
+    background-color: black;
+    outline: auto;
+    color: white;
+    padding: 5px 20px;
+}
+
+.result {
+    height: 100vh;
+    background-image: url(../images/Nature_Beach_Golden_Beach.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: floralwhite;
+    font-size: xxx-large;
+
+    &__text {
+        animation: srendup 3s;
+    }
+}
+
+@keyframes srendup {
+    from {
+        transform: translateY(150px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
