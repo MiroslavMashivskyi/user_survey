@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { nextQuestion, setAnswer, getYourResult } from '../BLL/reducers/reducer';
+import { nextQuestion, setAnswer } from '../BLL/reducers/reducer';
 import Interrogation from './interrogation';
 
 const mapStateToProps = (state) => {

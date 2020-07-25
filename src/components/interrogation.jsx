@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
     
 const Interrogation = ({ 
-    setAnswer, nextQuestion, getYourResult, getAnswer,
+    setAnswer, nextQuestion, 
     correct_answers, questions, question, 
-    count, answers, totalCount, result
+    count, answers, totalCount
     }) => {
 
     const[selected, setSelected] = useState();
